@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.container {
+			text-align: center;
+		}
+		button {
+			display: block;
+			margin: 20px auto 50px;
+		}
+		#svg-container {
+			display: inline-block;
+			margin: 0 auto;
+		}
+		svg {
+			overflow: visible;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<button onClick="createCicle()" ;>Create Circle</button>
+		<div id="svg-container"></div>
+	</div>
+	<script>
+		function createCicle() {
+			var color1 = "";
+			var color2 = "";
+			var color3 = "";
+			var a = Math.random() * 99;
+			if (a < 0.5)
+				a += 0.5;
+			var b = Math.random() * ((99 - a));
+			if (b < 0.5) {
+				b += 0.5;
+				a -= 0.5;
+			}
+			if (c < 0.5) {
+				c += 0.5;
+				if (a > b) {
+					a -= 0.5;
+				}
+				else {
+					b -= 0.5;
+				}
+			}
+			var c = (100 - (b + a));
+			var array = [a, b, c];
+			color1 = '#9de397';
+			color2 = '#bbc54a'
+			color3 = '#e0b8b8'
+			var circles = "<svg><circle cx='50' cy='50' r='" + array[0] + "' fill='" + color1 + "' />"
+				+ "<circle cx='150' cy='50' r='" + array[1] + "' fill='" + color2 + "' />"
+				+ "<circle cx='250' cy='50' r='" + array[2] + "' fill='" + color3 + "' />"
+				+ "</svg>";
+
+			document.getElementById('svg-container').innerHTML = circles;
+		}
+	</script>
+</body>
+</html>
